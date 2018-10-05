@@ -1,38 +1,37 @@
 package no.jaf.rule.rulewebapp.engine;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class RuleOutput {
 
     private RuleSet ruleSet;
-    private long identifiedRules;
-    private long passedRules;
-    private long failedRules;
+    private long rulesIdentified;
+    private long rulesPassed;
+    private long rulesWithRemarks;
     private List<RuleRemark> ruleRemarks;
 
-    public long getIdentifiedRules() {
-        return identifiedRules;
+    public long getRulesIdentified() {
+        return rulesIdentified;
     }
 
-    public void setIdentifiedRules(long identifiedRules) {
-        this.identifiedRules = identifiedRules;
+    public void setRulesIdentified(long rulesIdentified) {
+        this.rulesIdentified = rulesIdentified;
     }
 
-    public long getPassedRules() {
-        return passedRules;
+    public long getRulesPassed() {
+        return rulesPassed;
     }
 
-    public void setPassedRules(long passedRules) {
-        this.passedRules = passedRules;
+    public void setRulesPassed(long rulesPassed) {
+        this.rulesPassed = rulesPassed;
     }
 
-    public long getFailedRules() {
-        return failedRules;
+    public long getRulesWithRemarks() {
+        return rulesWithRemarks;
     }
 
-    public void setFailedRules(long failedRules) {
-        this.failedRules = failedRules;
+    public void setRulesWithRemarks(long rulesWithRemarks) {
+        this.rulesWithRemarks = rulesWithRemarks;
     }
 
     public List<RuleRemark> getRuleRemarks() {
@@ -49,5 +48,16 @@ public class RuleOutput {
 
     public void setRuleSet(RuleSet ruleSet) {
         this.ruleSet = ruleSet;
+    }
+
+    @Override
+    public String toString() {
+        return "RuleOutput{" +
+                "ruleSet=" + ruleSet +
+                ", rulesIdentified=" + rulesIdentified +
+                ", rulesPassed=" + rulesPassed +
+                ", rulesWithRemarks=" + rulesWithRemarks +
+                ", ruleRemarks=" + ruleRemarks +
+                '}';
     }
 }

@@ -19,13 +19,8 @@ public class TestRule2 implements BusinessRule {
 
         boolean test = Boolean.valueOf(input.getInputData().get("test"));
         String text = input.getInputData().get("text");
-        int number = Integer.parseInt(input.getInputData().get("number"));
-        System.out.println("Test: " + test);
-        System.out.println("Text: " + text);
-        System.out.println("Number: " + number);
 
         validateInput(input.getInputData());
-
         List<RuleRemark> remarks = new ArrayList<>();
 
         if(!test && text.equals("Halloisen")){

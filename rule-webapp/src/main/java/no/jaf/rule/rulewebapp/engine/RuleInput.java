@@ -22,4 +22,12 @@ public class RuleInput {
     public void setInputData(HashMap<String, String> inputData) {
         this.inputData = inputData;
     }
+
+    @Override
+    public String toString() {
+        return "RuleInput{" +
+                "ruleset=" + ruleset +
+                ", inputData=" + inputData +
+                '}';
+    }
 }

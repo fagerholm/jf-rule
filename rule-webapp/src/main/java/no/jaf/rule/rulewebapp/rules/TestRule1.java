@@ -1,7 +1,6 @@
 package no.jaf.rule.rulewebapp.rules;
 
 import no.jaf.rule.rulewebapp.engine.*;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -20,11 +19,6 @@ public class TestRule1 implements BusinessRule {
     public List<RuleRemark> execute(RuleInput input) {
 
         boolean test = Boolean.valueOf(input.getInputData().get("test"));
-        String text = input.getInputData().get("text");
-        int number = Integer.parseInt(input.getInputData().get("number"));
-        System.out.println("Test: " + test);
-        System.out.println("Text: " + text);
-        System.out.println("Number: " + number);
 
         validateInput(input.getInputData());
 

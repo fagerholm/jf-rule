@@ -53,4 +53,13 @@ public class RuleRemark implements Serializable {
     public int hashCode() {
         return Objects.hash(ruleName, code, severity);
     }
+
+    @Override
+    public String toString() {
+        return "RuleRemark{" +
+                "ruleName='" + ruleName + '\'' +
+                ", code=" + code +
+                ", severity=" + severity +
+                '}';
+    }
 }
