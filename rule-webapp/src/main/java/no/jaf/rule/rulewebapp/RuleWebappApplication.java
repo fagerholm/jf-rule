@@ -3,12 +3,10 @@ package no.jaf.rule.rulewebapp;
 import java.io.IOException;
 import java.io.InputStream;
 
-import no.jaf.rule.rulewebapp.engine.Configuration;
+import no.jaf.rule.core.dto.configuration.Configuration;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
 

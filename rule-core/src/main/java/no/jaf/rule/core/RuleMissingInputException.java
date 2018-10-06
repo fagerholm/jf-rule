@@ -1,15 +1,15 @@
-package no.jaf.rule.rulewebapp.engine;
+package no.jaf.rule.core;
 
 import java.util.List;
 
-public class MissingRuleInputException extends RuntimeException{
+public class RuleMissingInputException extends RuntimeException{
 
     private final List<String> requiredInput;
     private final List<String> missingInput;
     private final String ruleName;
 
 
-    public MissingRuleInputException(String ruleName, List<String> requiredInput, List<String> missingInput) {
+    public RuleMissingInputException(String ruleName, List<String> requiredInput, List<String> missingInput) {
 
 
         super(String.format("Rule [%s] is missing required data for execution. Missing data: %s. Required data: %s", ruleName, missingInput, requiredInput));

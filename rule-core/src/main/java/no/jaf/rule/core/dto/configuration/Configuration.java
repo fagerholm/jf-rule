@@ -1,9 +1,10 @@
-package no.jaf.rule.rulewebapp.engine;
+package no.jaf.rule.core.dto.configuration;
 
 import java.util.*;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import no.jaf.rule.core.dto.rule.RuleSet;
 
 
 public class Configuration {

@@ -1,7 +1,12 @@
-package no.jaf.rule.rulewebapp.engine;
+package no.jaf.rule.rulewebapp;
 
 import io.swagger.annotations.*;
-import no.jaf.rule.rulewebapp.rules.RuleService;
+import no.jaf.rule.core.dto.configuration.Configuration;
+import no.jaf.rule.core.dto.rule.RuleInput;
+import no.jaf.rule.core.dto.rule.RuleOutput;
+import no.jaf.rule.core.RuleMissingInputException;
+import no.jaf.rule.core.RuleApiError;
+import no.jaf.rule.core.service.RuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -36,7 +41,7 @@ public class RuleController {
         try {
             return ResponseEntity.ok(ruleService.executeRules(input));
 
-        } catch (MissingRuleInputException mrie) {
+        } catch (RuleMissingInputException mrie) {
             RuleApiError apiError = new RuleApiError(HttpStatus.BAD_REQUEST, mrie.getMessage());
             return new ResponseEntity<>(apiError, new HttpHeaders(), apiError.getStatus());
         }

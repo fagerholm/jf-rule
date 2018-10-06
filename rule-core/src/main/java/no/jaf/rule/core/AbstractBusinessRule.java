@@ -1,4 +1,7 @@
-package no.jaf.rule.rulewebapp.engine;
+package no.jaf.rule.core;
+
+import no.jaf.rule.core.dto.rule.RuleInput;
+import no.jaf.rule.core.dto.rule.RuleRemark;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,7 +34,7 @@ public abstract class AbstractBusinessRule implements BusinessRule {
         }
 
         if(!missingInputFields.isEmpty()){
-            throw new MissingRuleInputException(this.getClass().getSimpleName(), requiredInputFields, missingInputFields);
+            throw new RuleMissingInputException(this.getClass().getSimpleName(), requiredInputFields, missingInputFields);
         }
     }
 

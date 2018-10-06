@@ -1,15 +1,18 @@
-package no.jaf.rule.rulewebapp.rules;
+package no.jaf.rule.rules;
 
-import no.jaf.rule.rulewebapp.engine.*;
+import no.jaf.rule.core.dto.rule.RemarkCode;
+import no.jaf.rule.core.dto.rule.RuleInput;
+import no.jaf.rule.core.dto.rule.RuleRemark;
+import no.jaf.rule.core.dto.rule.RuleSet;
+import no.jaf.rule.core.AbstractBusinessRule;
+import no.jaf.rule.core.Rule;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static no.jaf.rule.rulewebapp.engine.RuleSet.SET1;
-import static no.jaf.rule.rulewebapp.engine.RuleSet.SET2;
 
-
-@Rule(ruleSets = {SET1, SET2})
+@Rule(ruleSets = {RuleSet.SET1, RuleSet.SET2})
 public class TestRule1 extends AbstractBusinessRule {
 
     public TestRule1(){

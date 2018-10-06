@@ -1,6 +1,13 @@
-package no.jaf.rule.rulewebapp.rules;
+package no.jaf.rule.core.service;
 
-import no.jaf.rule.rulewebapp.engine.*;
+
+import no.jaf.rule.core.BusinessRule;
+import no.jaf.rule.core.dto.configuration.Configuration;
+import no.jaf.rule.core.dto.configuration.RuleConfiguration;
+import no.jaf.rule.core.dto.rule.RuleInput;
+import no.jaf.rule.core.dto.rule.RuleOutput;
+import no.jaf.rule.core.dto.rule.RuleRemark;
+import no.jaf.rule.core.dto.rule.RuleSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

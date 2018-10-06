@@ -1,4 +1,4 @@
-package no.jaf.rule.rulewebapp.engine;
+package no.jaf.rule.core.dto.rule;
 
 public enum RemarkSeverity {
 

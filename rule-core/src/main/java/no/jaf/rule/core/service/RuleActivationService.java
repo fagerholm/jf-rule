@@ -1,9 +1,9 @@
-package no.jaf.rule.rulewebapp.rules;
+package no.jaf.rule.core.service;
 
-import no.jaf.rule.rulewebapp.engine.BusinessRule;
-import no.jaf.rule.rulewebapp.engine.Rule;
-import no.jaf.rule.rulewebapp.engine.RuleEngineException;
-import no.jaf.rule.rulewebapp.engine.RuleSet;
+import no.jaf.rule.core.BusinessRule;
+import no.jaf.rule.core.Rule;
+import no.jaf.rule.core.RuleEngineException;
+import no.jaf.rule.core.dto.rule.RuleSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package no.jaf.rule.rulewebapp.engine;
+package no.jaf.rule.core.dto.rule;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

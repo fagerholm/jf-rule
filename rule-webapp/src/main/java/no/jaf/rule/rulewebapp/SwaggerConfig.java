@@ -1,4 +1,4 @@
-package no.jaf.rule.rulewebapp.config;
+package no.jaf.rule.rulewebapp;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
