@@ -37,6 +37,11 @@ public class RuleActivationService {
         return ruleNames;
     }
 
+    public Map<RuleSet, Set<BusinessRule>> findAllRulesets(){
+        return rulesForRuleSet;
+    }
+
+
     @PostConstruct
     void init() {
         assembleRuleList();

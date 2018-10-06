@@ -3,7 +3,6 @@ package no.jaf.rule.rulewebapp.rules;
 import no.jaf.rule.rulewebapp.engine.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 
 import static no.jaf.rule.rulewebapp.engine.RuleSet.SET1;
@@ -11,16 +10,16 @@ import static no.jaf.rule.rulewebapp.engine.RuleSet.SET2;
 
 
 @Rule(ruleSets = {SET1, SET2})
-public class TestRule1 implements BusinessRule {
+public class TestRule1 extends AbstractBusinessRule {
 
-    private static final List<String> requiredInputFields = Arrays.asList("number");
+    public TestRule1(){
+        super(Arrays.asList("number"));
+    }
 
     @Override
-    public List<RuleRemark> execute(RuleInput input) {
+    public List<RuleRemark> executeInternal(RuleInput input) {
 
         boolean test = Boolean.valueOf(input.getInputData().get("test"));
-
-        validateInput(input.getInputData());
 
         List<RuleRemark> remarks = new ArrayList<>();
 
@@ -31,18 +30,4 @@ public class TestRule1 implements BusinessRule {
         return remarks;
     }
 
-    private void validateInput(HashMap<String, String> inputData){
-
-        List<String> missingInputFields = new ArrayList<>();
-        for(String field : requiredInputFields){
-            if(!inputData.containsKey(field)){
-
-                missingInputFields.add(field);
-            }
-        }
-
-        if(!missingInputFields.isEmpty()){
-            throw new MissingRuleInputException(this.getClass().getSimpleName(), requiredInputFields, missingInputFields);
-        }
-    }
 }

@@ -9,6 +9,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @Api(value = "/rules")
 @RestController
@@ -38,5 +40,17 @@ public class RuleController {
             RuleApiError apiError = new RuleApiError(HttpStatus.BAD_REQUEST, mrie.getMessage());
             return new ResponseEntity<>(apiError, new HttpHeaders(), apiError.getStatus());
         }
+    }
+
+    @ApiOperation(value = "Returns all rulesets with given rules")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "A list of active rulesets with the belonging rules", response = Configuration.class)})
+    @GetMapping(value = "/config", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Configuration>> getAllRuleSets() {
+
+        System.out.println("Tester");
+        List<Configuration> configurations = ruleService.getRuleSets();
+        System.out.println("Configurations: " + configurations);
+        return configurations != null ? ResponseEntity.ok(configurations) : ResponseEntity.noContent().build();
     }
 }

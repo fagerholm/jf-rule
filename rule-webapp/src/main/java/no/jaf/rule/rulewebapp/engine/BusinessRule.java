@@ -2,7 +2,6 @@ package no.jaf.rule.rulewebapp.engine;
 
 import java.util.List;
 
-@FunctionalInterface
 public interface BusinessRule {
 
     List<RuleRemark> execute(RuleInput grunnlag);
@@ -10,4 +9,6 @@ public interface BusinessRule {
     default List<RuleRemark> ingenMerknader() {
         return RuleRemarkCreator.noRemarks();
     }
+
+    List<String> getRequiredInput();
 }
